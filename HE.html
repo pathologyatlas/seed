@@ -27,6 +27,10 @@
 </head>
 
 <body>
+  <div>
+    <label for="rotation-slider">Rotate Image:</label>
+    <input type="range" id="rotation-slider" min="0" max="360" value="0">
+  </div>
 
   <div id="openseadragon1" style="width: 100%; height: 95%;"></div>
 
@@ -133,6 +137,10 @@
       }
     });
 
+    document.getElementById('rotation-slider').addEventListener('input', function (event) {
+      var rotationAngle = event.target.value;
+      viewer.viewport.setRotation(parseFloat(rotationAngle));
+    });
 
   </script>
 </body>
